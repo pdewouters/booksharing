@@ -46,7 +46,7 @@ Meteor.methods({
     return Books.update(book._id, { $pull: { requestedBy: this.userId } });
   },
   'books.acceptTrade': function(book, user) {
-    Books.update(book._id, { $pull: { requestedBy: user }});
-    return Books.update(book._id, { $set: {lentTo: user } });
+    Books.update(book._id, { $pull: { requestedBy: user } });
+    return Books.update(book._id, { $set: { lentTo: user } });
   }
 });
